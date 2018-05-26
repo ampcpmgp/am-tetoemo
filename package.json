@@ -1,5 +1,5 @@
 {
-  "name": "am-tetoemoji",
+  "name": "am-tetoemo",
   "version": "0.0.0",
   "description": "",
   "main": "index.js",
@@ -12,6 +12,7 @@
     "precommit": "lint-staged",
     "prestart": "run-s build:riot",
     "start": "run-p watch:**",
+    "crawl": "node ./lib/get-emoji",
     "build:riot": "riot src/app --ext html",
     "watch:mock": "am-mocktimes watch",
     "watch:riot": "chokidar \"src/app/**/*.tag.html\" -c \"riot {path} --ext html\""
@@ -57,7 +58,9 @@
     "axios": "^0.18.0",
     "babel-polyfill": "^6.26.0",
     "dob": "^2.5.8",
+    "franc": "^4.0.0",
     "normalize.css": "^8.0.0",
+    "puppeteer": "^1.4.0",
     "riot": "^3.10.1",
     "upgrade": "^1.1.0"
   }
