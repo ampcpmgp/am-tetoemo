@@ -3,29 +3,15 @@ import './parts/header.tag'
 
 <app-root>
   <parts-header></parts-header>
-  <h2>{title}</h2>
-  <div>
-    {clickCount}
-  </div>
-  <div>
-    API: {apiData}
-  </div>
-  <img src={droidKun} alt="">
+  <textarea ref="textarea" rows="2" onchange={onEdit} oninput={onEdit}></textarea>
+  <span>{text}</span>
+
   <style type="less">
-    :scope {
-      display: flex;
-      flex-direction: column;
-      border: 1px solid;
-    }
-
-    > img {
-      width: 200px;
-    }
-
-    > h2 {
-      color: blue;
+    > textarea {
+      width: 100%;
     }
   </style>
+
   <script>
     import root from './root'
     root(this)

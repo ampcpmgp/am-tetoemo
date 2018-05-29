@@ -1,28 +1,17 @@
-# parcel-riot-mocktimes-starter
+# TeToEmo
+
+次世代国際言語、絵文字(emoji)に変換するツールです。
+
+## 対応言語
+
+* 中国語 - mandarin chinese
+* 日本語
+* 英語
+* 韓国語
 
 
-## for use as starter-kit
+## やりたいこと
 
-```
-git clone https://github.com/ampcpmgp/parcel-riot-mocktimes-starter
-```
-delete `.git` directory
-```
-git init
-```
-
-edit `parcel-riot-mocktimes-starter/` dir name
-edit `package.json` `name` and `version` property  
-edit `README.md`
-
-```
-npm i
-npm start
-```
-
-access //localhost:1234
-
-
-## for developer of this repository
-
-TODO:
+* 類義語のセット
+* twitter連携
+* AIによる最適文言サーチ

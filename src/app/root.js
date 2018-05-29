@@ -1,36 +1,42 @@
 import { observe } from 'dob'
-import axios from 'axios'
-import ui from '../state/ui'
-import Path from '../const/path'
-import droidKun from '../images/droid-kun.png'
+import autosize from 'autosize'
+import franc from 'franc'
+import { parse } from '../utils/emoji'
 
 export default self => {
-  const getApi = async () => {
-    try {
-      const { data } = await axios.get(Path.TEST)
-      self.apiData = JSON.stringify(data)
-      self.update()
-    } catch (e) {
-      console.warn('api error')
-    }
-  }
-
   Object.assign(self, {
-    title: 'Hello, World',
-    droidKun,
-    apiData: null,
-    getApi,
-    clickCount: ui.clickCount
+    text: null,
+
+    onEdit (e) {
+      const text = e.currentTarget.value
+      const langCode = franc(
+        Array.from({ length: 10 })
+          .map(() => text)
+          .join(' ')
+      )
+
+      switch (langCode) {
+        case 'cmn':
+          break
+        case 'jpn':
+          self.text = parse(text, langCode)
+          break
+        case 'eng':
+          break
+        case 'kor':
+          break
+        default:
+          self.text = "not suppoted language. I'm sorry. m(__)m"
+      }
+
+      self.update()
+    }
   })
 
-  const signal = observe(() => {
-    self.update({
-      clickCount: ui.clickCount
-    })
-  })
+  const signal = observe(() => {})
 
   self.on('mount', () => {
-    self.getApi()
+    autosize(self.refs.textarea)
   })
 
   self.on('unmount', () => {
