@@ -1,19 +1,16 @@
 import riot from 'riot'
 
 <parts-header>
-  <span onclick={addCount}>menu</span>
-  <span>{clickCount} / {clickHistory.length}</span>
+  <span>TeToEmo 📝 ➡ 🎨</span>
+  <span>(text to emoji)</span>
   <style type="less">
     :scope {
       display: flex;
-      flex-direction: column;
+      justify-content: space-between;
+      padding: 10px;
       width: 100%;
       color: white;
       background-color: #555;
     }
   </style>
-  <script>
-    import header from './header'
-    header(this)
-  </script>
 </parts-header>

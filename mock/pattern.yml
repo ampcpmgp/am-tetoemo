@@ -1,4 +1,1 @@
-addCount:
-  - [uiAction.addCount]
-  - [uiAction.addCount]
-  - [uiAction.addCount]
+猫が猫に魚を2匹上げる: [emoji.parse, 猫が猫に魚を2匹上げる, jpn]
