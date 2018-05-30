@@ -1,39 +1,42 @@
 import { observe } from 'dob'
 import autosize from 'autosize'
-import franc from 'franc'
-import { parse } from '../utils/emoji'
+import text, * as textAction from '../state/text'
 
 export default self => {
   Object.assign(self, {
-    text: null,
+    inputValue: text.inputValue,
+    result: '',
 
     onEdit (e) {
-      const text = e.currentTarget.value
-      const langCode = franc(
-        Array.from({ length: 10 })
-          .map(() => text)
-          .join(' ')
-      )
+      const inputValue = e.currentTarget.value
+      const langCode = 'jpn'
 
       switch (langCode) {
         case 'cmn':
-          break
         case 'jpn':
-          self.text = parse(text, langCode)
-          break
         case 'eng':
-          break
         case 'kor':
+          textAction.setInputValue(inputValue)
+          textAction.setParsedData(langCode)
+          textAction.setResult()
           break
         default:
-          self.text = "not suppoted language. I'm sorry. m(__)m"
+          textAction.setInputValue(inputValue)
+          self.result = "not suppoted language. I'm sorry. m(__)m"
       }
 
       self.update()
     }
   })
 
-  const signal = observe(() => {})
+  const signal = observe(() => {
+    const { inputValue, result } = text
+
+    self.update({
+      inputValue,
+      result
+    })
+  })
 
   self.on('mount', () => {
     autosize(self.refs.textarea)

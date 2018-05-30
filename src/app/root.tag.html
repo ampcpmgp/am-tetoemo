@@ -3,12 +3,16 @@ import './parts/header.tag'
 
 <app-root>
   <parts-header></parts-header>
-  <textarea ref="textarea" rows="2" onchange={onEdit} oninput={onEdit}></textarea>
-  <span>{text}</span>
+  <textarea ref="textarea" rows="2" onchange={onEdit} oninput={onEdit}>{inputValue}</textarea>
+  <span class="result">{result}</span>
 
   <style type="less">
     > textarea {
       width: 100%;
+    }
+
+    > .result {
+      white-space: pre-line;
     }
   </style>
 
