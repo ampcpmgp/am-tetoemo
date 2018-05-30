@@ -13,6 +13,7 @@
     "prestart": "run-s build:riot",
     "start": "run-p watch:**",
     "crawl": "node ./lib/get-emoji",
+    "gh-pages": "rimraf docs && am-mocktimes build -d docs --public-url https://ampcpmgp.github.io/am-tetoemo/docs && git add . && git commit -m \"update gh-pages\" && git push origin",
     "build:riot": "riot src/app --ext html",
     "watch:mock": "am-mocktimes watch",
     "watch:riot": "chokidar \"src/app/**/*.tag.html\" -c \"riot {path} --ext html\""
@@ -44,6 +45,7 @@
     ]
   },
   "lint-staged": {
+    "ignore": ["data/**"],
     "**/*.js": [
       "prettier --write",
       "standard --fix",
