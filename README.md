@@ -1,4 +1,7 @@
 # TeToEmo
+
+次世代国際言語、絵文字(emoji)にテキストを変換するWebツールです。
+
 https://ampcpmgp.github.io/am-tetoemo/docs/mock.html
 
 ## 対応言語
