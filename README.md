@@ -3,7 +3,7 @@ https://ampcpmgp.github.io/am-tetoemo/docs/mock.html
 
 ## 対応言語
 
-* 中国語 - mandarin chinese
+* 中国語 (mandarin chinese)
 * 日本語
 * 英語
 * 韓国語
