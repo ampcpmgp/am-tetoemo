@@ -1,7 +1,7 @@
-import emoji from '../../data/word.min.json'
+import emoji from '../../data/all.min.json'
 
-export const parse = (text, lang) => {
-  const table = emoji[lang]
+export const parse = (text) => {
+  const table = emoji
   const textKeys = Object.keys(table).sort(
     (pre, cur) => cur.length - pre.length
   )

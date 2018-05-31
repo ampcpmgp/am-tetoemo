@@ -9,21 +9,10 @@ export default self => {
 
     onEdit (e) {
       const inputValue = e.currentTarget.value
-      const langCode = 'jpn'
 
-      switch (langCode) {
-        case 'cmn':
-        case 'jpn':
-        case 'eng':
-        case 'kor':
-          textAction.setInputValue(inputValue)
-          textAction.setParsedData(langCode)
-          textAction.setResult()
-          break
-        default:
-          textAction.setInputValue(inputValue)
-          self.result = "not suppoted language. I'm sorry. m(__)m"
-      }
+      textAction.setInputValue(inputValue)
+      textAction.setParsedData()
+      textAction.setResult()
 
       self.update()
     }

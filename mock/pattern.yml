@@ -1,4 +1,4 @@
 猫が猫に魚を2匹上げる:
   - [textAction.setInputValue, 猫が猫に魚を2匹上げる]
-  - [textAction.setParsedData, jpn]
+  - [textAction.setParsedData]
   - [textAction.setResult]

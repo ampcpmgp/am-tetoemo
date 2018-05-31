@@ -11,8 +11,8 @@ export const setInputValue = value => {
   text.inputValue = value
 }
 
-export const setParsedData = lang => {
-  text.parsedData = parse(text.inputValue, lang)
+export const setParsedData = () => {
+  text.parsedData = parse(text.inputValue)
 }
 
 export const setResult = () => {
