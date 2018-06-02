@@ -5,7 +5,14 @@ import text, * as textAction from '../state/text'
 export default self => {
   Object.assign(self, {
     inputValue: text.inputValue,
-    result: '',
+    strings: [],
+
+    showEmojis (index) {
+      return () => {
+        const emojis = textAction.getIndexEmojis(index)
+        console.log(emojis)
+      }
+    },
 
     onEdit (e) {
       const inputValue = e.currentTarget.value
@@ -23,7 +30,7 @@ export default self => {
 
     self.update({
       inputValue,
-      result
+      strings: [...result]
     })
   })
 

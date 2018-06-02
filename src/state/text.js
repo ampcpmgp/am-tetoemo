@@ -25,4 +25,8 @@ export const setResult = () => {
   }, text.inputValue)
 }
 
+export const getIndexEmojis = (index) => {
+  return text.parsedData.find(parsedItem => parsedItem.index === index)
+}
+
 export default text
