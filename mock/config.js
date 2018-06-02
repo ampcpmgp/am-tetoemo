@@ -10,7 +10,11 @@ mockAdapter.onGet(Path.TEST).reply(200, {
 })
 
 mock({
-  textAction
+  setText (text) {
+    textAction.setInputValue(text)
+    textAction.setParsedData()
+    textAction.setResult()
+  }
 })
 
 require('../src/app') // for hot reload

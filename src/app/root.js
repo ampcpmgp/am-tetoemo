@@ -7,13 +7,6 @@ export default self => {
     inputValue: text.inputValue,
     strings: [],
 
-    showEmojis (index) {
-      return () => {
-        const emojis = textAction.getIndexEmojis(index)
-        console.log(emojis)
-      }
-    },
-
     onEdit (e) {
       const inputValue = e.currentTarget.value
 
@@ -30,7 +23,7 @@ export default self => {
 
     self.update({
       inputValue,
-      strings: [...result]
+      result
     })
   })
 

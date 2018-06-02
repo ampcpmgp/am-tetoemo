@@ -1,4 +1,4 @@
-猫が猫に魚を2匹上げる:
-  - [textAction.setInputValue, 猫が猫に魚を2匹上げる]
-  - [textAction.setParsedData]
-  - [textAction.setResult]
+猫が学校で犬に魚を2匹上げる:
+  - [setText, 猫が学校で猫に魚を2匹上げる]
+Family love cat!:
+  - [setText, Family love cat!]

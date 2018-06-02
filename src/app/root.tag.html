@@ -5,10 +5,7 @@ import './parts/header.tag'
   <parts-header></parts-header>
   <textarea ref="textarea" rows="2" onchange={onEdit} oninput={onEdit}>{inputValue}</textarea>
   <span class="result">
-    <span
-      each={string, i in strings}
-      mouseover={showEmojis(i)}
-      onclick={showEmojis(i)}>{string}</span>
+    {result}
   </span>
 
   <style type="less">

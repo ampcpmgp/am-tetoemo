@@ -8,7 +8,7 @@ const text = observable({
 })
 
 export const setInputValue = value => {
-  text.inputValue = value
+  text.inputValue = value.toLowerCase()
 }
 
 export const setParsedData = () => {
