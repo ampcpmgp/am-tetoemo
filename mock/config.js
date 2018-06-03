@@ -9,11 +9,12 @@ mockAdapter.onGet(Path.TEST).reply(200, {
   successed: true
 })
 
+// TODO: 削除
+console.clear = () => {}
+
 mock({
   setText (text) {
-    textAction.setInputValue(text)
-    textAction.setParsedData()
-    textAction.setResult()
+    window.history.replaceState(null, null, `#text/${text}`)
   }
 })
 
