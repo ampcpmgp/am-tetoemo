@@ -7,14 +7,21 @@ import './parts/header.tag'
   <span class="result">
     {result}
   </span>
+  <section>
+    <span class="result" each={item in textData}>
+      {item.emojis ? item.emojis[item.selected] : item.label}
+    </span>
+  </section>
 
   <style type="less">
     > textarea {
       width: 100%;
     }
 
-    > .result {
-      white-space: pre-line;
+    > section {
+      > .result {
+        white-space: pre-line;
+      }
     }
   </style>
 

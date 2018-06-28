@@ -14,6 +14,7 @@ export const parse = (text) => {
           label: searchedWord,
           emojis: table[searchedWord],
           selected: 0,
+          length: searchedWord.length,
           index
         })
         const searchedIndex = index + 1

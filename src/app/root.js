@@ -7,14 +7,14 @@ export default self => {
   const updateText = (text) => Action(() => {
     textAction.setInputValue(text)
     textAction.setParsedData()
-    textAction.setResult()
+    textAction.setCharacters()
 
     self.update()
   })
 
   Object.assign(self, {
     inputValue: text.inputValue,
-    strings: [],
+    textData: [],
 
     onEdit (e) {
       const inputValue = e.currentTarget.value
@@ -30,11 +30,11 @@ export default self => {
   })
 
   const signal = observe(() => {
-    const { inputValue, result } = text
+    const { inputValue, data } = text
 
     self.update({
       inputValue,
-      result
+      textData: data
     })
   })
 
