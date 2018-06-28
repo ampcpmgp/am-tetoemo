@@ -6,15 +6,14 @@ import text, * as textAction from '../state/text'
 export default self => {
   const updateText = (text) => Action(() => {
     textAction.setInputValue(text)
-    textAction.setParsedData()
-    textAction.setResult()
+    textAction.setData()
 
     self.update()
   })
 
   Object.assign(self, {
     inputValue: text.inputValue,
-    strings: [],
+    data: [],
 
     onEdit (e) {
       const inputValue = e.currentTarget.value
@@ -30,11 +29,11 @@ export default self => {
   })
 
   const signal = observe(() => {
-    const { inputValue, result } = text
+    const { inputValue, data } = text
 
     self.update({
       inputValue,
-      result
+      data
     })
   })
 

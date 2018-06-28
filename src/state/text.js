@@ -3,30 +3,25 @@ import { parse } from '../utils/emoji'
 
 const text = observable({
   inputValue: '',
-  parsedData: [],
-  result: ''
+  result: '',
+  data: []
 })
+
+export const isNoData = pos => typeof text.data[pos] === 'undefined'
 
 export const setInputValue = value => {
   text.inputValue = value.toLowerCase()
 }
 
-export const setParsedData = () => {
-  text.parsedData = parse(text.inputValue)
-}
-
-export const setResult = () => {
-  text.result = text.parsedData.reduce((inputValue, parsedItem) => {
-    const replacedValue = inputValue.replace(
-      parsedItem.label,
-      parsedItem.emojis[parsedItem.selected]
-    )
-    return replacedValue
-  }, text.inputValue)
+export const setData = () => {
+  text.data = parse(text.inputValue).map(item => {
+    if (item.emojis) item.selected = 0
+    return item
+  })
 }
 
 export const getIndexEmojis = (index) => {
-  return text.parsedData.find(parsedItem => parsedItem.index === index)
+  return text.data.find(parsedItem => parsedItem.index === index)
 }
 
 export default text

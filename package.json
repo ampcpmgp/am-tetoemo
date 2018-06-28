@@ -45,7 +45,9 @@
     ]
   },
   "lint-staged": {
-    "ignore": ["data/**"],
+    "ignore": [
+      "data/**"
+    ],
     "**/*.js": [
       "prettier --write",
       "standard --fix",
@@ -62,6 +64,7 @@
     "babel-polyfill": "^6.26.0",
     "dob": "^2.5.8",
     "franc": "^4.0.0",
+    "lodash": "^4.17.10",
     "normalize.css": "^8.0.0",
     "puppeteer": "^1.4.0",
     "riot": "^3.10.1",
