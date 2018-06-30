@@ -1,5 +1,6 @@
 import riot from 'riot'
 import './parts/header.tag'
+import './parts/select.tag'
 
 <app-root>
   <parts-header></parts-header>
@@ -8,20 +9,12 @@ import './parts/header.tag'
     {result}
   </span>
   <section>
-    <span class="result" each={item in data}>
-      {item.emojis ? item.emojis[item.selected] : item.label}
-    </span>
+    <parts-select each={item, i in data} key={i}></parts-select>
   </section>
 
   <style type="less">
     > textarea {
       width: 100%;
-    }
-
-    > section {
-      > .result {
-        white-space: pre-line;
-      }
     }
   </style>
 
