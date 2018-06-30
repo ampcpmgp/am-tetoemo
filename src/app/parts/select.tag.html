@@ -1,0 +1,24 @@
+import riot from 'riot'
+
+<parts-select>
+  <span class="text-box" onclick={console.warn}>
+    {item.emojis ? item.emojis[item.selected] : item.label}
+  </span>
+  <span class="other-emojis" if={item.emojis}>
+    <span each={emoji, i in item.emojis}>{emoji}</span>
+    </div>
+  </span>
+
+  <style type="less">
+    :scope {
+      position: relative;
+    }
+
+    > .other-emojis {
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+
+  </style>
+</parts-select>
