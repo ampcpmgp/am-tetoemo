@@ -1,23 +1,22 @@
 import riot from 'riot'
 
 <parts-select>
-  <span class="text-box" onclick={console.warn}>
-    {item.emojis ? item.emojis[item.selected] : item.label}
+  <span if={!item.emojis} class="text-box">
+    {item.label}
   </span>
-  <span class="other-emojis" if={item.emojis}>
-    <div each={emoji, i in item.emojis}>{emoji}</div>
-  </span>
-
+  <select if={item.emojis} class="other-emojis" if={item.emojis}
+    onchange={opts.handleChange}
+    data-index={i}>
+    <option each={emoji, i in item.emojis} value={i}>{emoji}</option>
+  </select>
   <style type="less">
-    :scope {
-      position: relative;
+    > select {
+      appearance: none;
+    	-webkit-appearance: none;
+    	-moz-appearance: none;
+      background-color: transparent;
+      border: none;
+      outline: none;
     }
-
-    > .other-emojis {
-      position: absolute;
-      top: 0;
-      left: 0;
-    }
-
   </style>
 </parts-select>

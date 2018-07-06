@@ -9,12 +9,20 @@ import './parts/select.tag'
     {result}
   </span>
   <section>
-    <parts-select each={item, i in data} key={i}></parts-select>
+    <parts-select each={item, i in data} key={i} handle-change={selectEmoji}></parts-select>
   </section>
+
+  <button ref="button" data-clipboard-text={textAction.getText()} onclick={copy}>Copy Emoji</button>
 
   <style type="less">
     > textarea {
       width: 100%;
+    }
+
+    > button {
+      position: fixed;
+      right: 0;
+      bottom: 0;
     }
   </style>
 

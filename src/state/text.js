@@ -24,4 +24,15 @@ export const getIndexEmojis = (index) => {
   return text.data.find(parsedItem => parsedItem.index === index)
 }
 
+export const selectEmoji = (dataIndex, emojiIndex) => {
+  text.data[dataIndex].selected = emojiIndex
+}
+
+export const getText = () => {
+  return text.data.reduce((str, dataItem) => {
+    let text = dataItem.emojis ? dataItem.emojis[dataItem.selected] : dataItem.label
+    return str + text
+  }, '')
+}
+
 export default text
