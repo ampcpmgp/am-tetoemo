@@ -4,6 +4,7 @@ import './parts/select.tag'
 
 <app-root>
   <parts-header></parts-header>
+  <!-- TODO: 絵文字作成時に、URLを生成する -->
   <textarea ref="textarea" rows="2" onchange={onEdit} oninput={onEdit}>{inputValue}</textarea>
   <span class="result">
     {result}
